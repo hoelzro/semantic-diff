@@ -20,4 +20,7 @@ else:
     before = read_file(args.targets[0])
     after  = read_file(args.targets[1])
     result = semantic_diff.diff(before, after)
-    semantic_diff.display_diff(result, before, after)
+    if result:
+        semantic_diff.display_diff(result, before, after)
+    else:
+        print 'No semantic differences! 🙌'
