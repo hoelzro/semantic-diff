@@ -38,6 +38,6 @@ I'll clean it up and make it easier to use as time goes on.
 
 # Rules of Thumb
 
-  # If you don't know or can't tell, two things are non-equivalent.
-  # Functions are considered impure and side-effectful. (I might add the ability to mark functions as pure later)
-  # Importing a module doesn't have side effects (most don't - I might add the ability to contradict this rule later)
+  1. If you don't know or can't tell, two things are non-equivalent.
+  2. Functions are considered impure and side-effectful. (I might add the ability to mark functions as pure later)
+  3. Importing a module doesn't have side effects (most don't - I might add the ability to contradict this rule later)
