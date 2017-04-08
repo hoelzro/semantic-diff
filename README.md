@@ -34,6 +34,9 @@ it in your `PYTHONPATH`, and run it like so:
 
     python2 -m semantic_diff before.py after.py
 
+It's VERY much a work in progress, so I expect it to explode on pretty much anything except for trivial examples
+like the ones shown above.
+
 I'll clean it up and make it easier to use as time goes on.
 
 # Rules of Thumb
