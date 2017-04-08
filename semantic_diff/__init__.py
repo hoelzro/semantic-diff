@@ -1,3 +1,5 @@
+# vim: encoding=utf-8
+
 import ast
 
 from semantic_diff.dispatch import type_dispatch
@@ -87,3 +89,20 @@ def diff(before, after):
         ASTContext(),
         after_ast,
         ASTContext())
+
+def display_diff(differences, before, after):
+    before_lines = before.rstrip('\n').split('\n')
+    after_lines = after.rstrip('\n').split('\n')
+    differences.sort(key=lambda d: d[2:])
+    differences.reverse()
+
+    line_no = 1
+    for line in after_lines:
+        annotation = [' '] * len(line)
+        while differences and differences[-1][2] == line_no:
+            annotation[differences.pop()[3]] = '↑'
+        annotation = ''.join(annotation)
+        print line
+        if annotation.strip() != '':
+            print annotation
+        line_no += 1
