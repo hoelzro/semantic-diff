@@ -48,6 +48,19 @@ class DumpVisitor(ast.NodeVisitor):
         self.print('Load')
         self.visit_children(node)
 
+    def visit_FunctionDef(self, node):
+        # name args body decorator_list
+        self.print('FunctionDef', node.name)
+        self.visit_children(node)
+
+    def visit_arguments(self, node):
+        # args vararg kwarg defaults
+        self.visit_children(node)
+
+    def visit_Pass(self, node):
+        self.print('Pass')
+        self.visit_children(node)
+
     def generic_visit(self, node):
         raise Exception("Can't handle node: " + str(node))
 
