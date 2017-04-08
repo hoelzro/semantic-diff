@@ -1,13 +1,16 @@
+import ast
 import unittest
 
 import semantic_diff
 
 class SemanticDiffTests(unittest.TestCase):
     def assertSemanticallySame(self, before, after):
-        pass
+        before_ast = ast.parse(before)
+        after_ast = ast.parse(after)
 
     def assertSemanticallyDifferent(self, before, after):
-        pass
+        before_ast = ast.parse(before)
+        after_ast = ast.parse(after)
 
     def test_import_aliasing(self):
         self.assertSemanticallySame('''
