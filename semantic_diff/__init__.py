@@ -72,7 +72,7 @@ class Comparator(object):
         ctx_b = ctx_b.push_scope()
         differences = []
 
-        # XXX LCS and canoncial reorderings
+        # XXX LCS and canonical reorderings
         for a_stmt, b_stmt in zip(a.body, b.body):
             result = self.compare(a_stmt, ctx_a, b_stmt, ctx_b)
             differences.extend(result)
