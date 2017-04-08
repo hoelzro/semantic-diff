@@ -17,4 +17,7 @@ args = options.parse_args()
 if args.dump:
     dump_ast(ast.parse(read_file(args.targets[0]), filename=args.targets[0]))
 else:
-    print semantic_diff.diff(read_file(args.targets[0]), read_file(args.targets[1]))
+    before = read_file(args.targets[0])
+    after  = read_file(args.targets[1])
+    result = semantic_diff.diff(before, after)
+    semantic_diff.display_diff(result, before, after)
